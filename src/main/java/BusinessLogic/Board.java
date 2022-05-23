@@ -22,6 +22,7 @@ public class Board {
 
     /**
      * Moves the Bishops on the board
+     *
      * @param from is the position from where we want to move
      * @param to   is the position where we want to move
      */

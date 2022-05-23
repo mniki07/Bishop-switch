@@ -8,6 +8,7 @@ public class Position {
 
     /**
      * Creates a new Position object.
+     *
      * @param row is the row component of the position
      * @param column is the column component of the position
      */
@@ -26,5 +27,9 @@ public class Position {
 
     public boolean equals(Position position){
         return this.row==position.getRow() && this.column== position.getColumn();
+    }
+    @Override
+    public String toString(){
+        return String.format("%d, %d", row,column);
     }
 }

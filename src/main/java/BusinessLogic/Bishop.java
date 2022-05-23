@@ -13,7 +13,6 @@ public class Bishop {
 
     private Position position;
     private Color color;
-
     /**
      * Creates a bishop.
      *
@@ -175,7 +174,7 @@ public class Bishop {
      * @param actualBoard is the actual state of the board
      * @return true when the move is diagonal and the piece cannot be knocked down, otherwise false
      */
-    public boolean isPossibleMove(Position from, Position to, Board actualBoard) {
+    private boolean isPossibleMove(Position from, Position to, Board actualBoard) {
        if(actualBoard.getBishop(from)!=null){
            if (actualBoard.getBishop(to)==null) {
                if (isDiagonalMove(from, to)) {

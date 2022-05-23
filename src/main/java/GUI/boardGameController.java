@@ -13,10 +13,13 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.StackPane;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import java.util.ArrayList;
 import java.util.List;
 
 public class boardGameController {
+    private static final Logger logger = LogManager.getLogger();
 
 
     private enum SelectionPhase {
@@ -103,7 +106,7 @@ public class boardGameController {
         var row = GridPane.getRowIndex(square);
         var col = GridPane.getColumnIndex(square);
         var position = new Position(row, col);
-        //Logger.debug("Click on square {}", position);
+        logger.debug("Click on square {}", position);
         handleClickOnSquare(position);
     }
     Position fromPosition;

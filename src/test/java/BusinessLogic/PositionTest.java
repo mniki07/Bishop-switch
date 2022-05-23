@@ -14,5 +14,6 @@ class PositionTest {
         assertTrue(position1.equals(position2));
         assertTrue(position1.equals(position1));
         assertFalse(position2.equals(position3));
+        assertFalse(position1.equals(position3));
     }
 }
