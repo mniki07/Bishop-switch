@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" styleClass="root" stylesheets="@homePage.css" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.FirstController">
+   <children>
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="162.0" layoutY="41.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@whiteBishop.png" />
+         </image></ImageView>
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="338.0" layoutY="41.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@blackBishop.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="170.0" layoutY="227.0" text="Name" />
+      <TextField layoutX="226.0" layoutY="223.0" />
+      <Button layoutX="244.0" layoutY="309.0" mnemonicParsing="false" onAction="#switchScene" prefHeight="38.0" prefWidth="112.0" text="New game" />
+      <Button layoutX="419.0" layoutY="309.0" mnemonicParsing="false" onAction="#handleExit" prefHeight="38.0" prefWidth="62.0" text="Exit" />
+   </children>
+</AnchorPane>
