@@ -67,3 +67,17 @@ DEBUG: Click on square 0, 3
 DEBUG: Click on square 1, 2
 2022-05-25 18:26:18 [JavaFX Application Thread] GUI.BoardGameController.handleExit()
 DEBUG: Exiting...
+2022-05-25 18:58:53 [main] GUI.Main.main()
+INFO: Application launch
+2022-05-25 18:58:54 [JavaFX Application Thread] GUI.sceneSwitchingApplication.start()
+INFO: Show the homepage
+2022-05-25 18:58:58 [JavaFX Application Thread] GUI.FirstController.switchScene()
+INFO: Switching to the Board.
+2022-05-25 18:58:58 [JavaFX Application Thread] BusinessLogic.Board.<init>()
+DEBUG: Made the board
+2022-05-25 18:58:59 [JavaFX Application Thread] GUI.BoardGameController.handleMouseClick()
+DEBUG: Click on square 4, 0
+2022-05-25 18:59:00 [JavaFX Application Thread] GUI.BoardGameController.handleMouseClick()
+DEBUG: Click on square 3, 1
+2022-05-25 18:59:02 [JavaFX Application Thread] GUI.BoardGameController.handleExit()
+DEBUG: Exiting...

@@ -35,7 +35,6 @@ public class Position {
 
     /**
      * Sets the row of the position.
-     * @return the row
      */
     public void setRow(int row) {
         this.row = row;
@@ -43,7 +42,6 @@ public class Position {
 
     /**
      * Sets the column of the position.
-     * @return the column
      */
     public void setColumn(int column) {
         this.column = column;
