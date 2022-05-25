@@ -12,9 +12,7 @@ public class Main {
      * @param args are the command line arguments
      */
     public static void main(String[] args) {
-
+        logger.info("Application launch");
         Application.launch(sceneSwitchingApplication.class, args);
-
-
     }
 }

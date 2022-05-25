@@ -25,6 +25,14 @@ public class Position {
         return column;
     }
 
+    public void setRow(int row) {
+        this.row = row;
+    }
+
+    public void setColumn(int column) {
+        this.column = column;
+    }
+
     public boolean equals(Position position){
         return this.row==position.getRow() && this.column== position.getColumn();
     }

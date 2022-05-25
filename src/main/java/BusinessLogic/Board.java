@@ -1,9 +1,13 @@
 package BusinessLogic;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 /**
  * Represents a 2D board with 5*4 size
  */
 public class Board {
+    private static final Logger logger = LogManager.getLogger();
     private Bishop[][] board=new Bishop[5][4];
 
     /**
@@ -18,6 +22,7 @@ public class Board {
             board[4][i]=new Bishop(Bishop.Color.WHITE,
                     new Position(4,i));
         }
+        logger.debug("Made the board");
     }
 
     /**
@@ -28,6 +33,8 @@ public class Board {
      */
     public void move(Position from, Position to){
         board[to.getRow()][to.getColumn()]=board[from.getRow()][from.getColumn()];
+        board[to.getRow()][to.getColumn()].getPosition().setRow(to.getRow());
+        board[to.getRow()][to.getColumn()].getPosition().setColumn(to.getColumn());
         board[from.getRow()][from.getColumn()]=null;
     }
 

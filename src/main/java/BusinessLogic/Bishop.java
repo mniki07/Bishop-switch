@@ -13,9 +13,9 @@ public class Bishop {
 
     private Position position;
     private Color color;
+
     /**
      * Creates a bishop.
-     *
      * @param color    is the color component of the piece
      * @param position is the position component of the piece
      */
@@ -26,7 +26,6 @@ public class Bishop {
 
     /**
      * Decides whether the move is diagonal or not.
-     *
      * @param from is the position from where we want to move
      * @param to   is the position where we want to move
      * @return true when the move is valid, otherwise false
@@ -37,7 +36,6 @@ public class Bishop {
 
     /**
      * Decides whether the Bishops step over each other or not.
-     *
      * @param from is the position from where we want to move
      * @param to   is the position where we want to move
      * @param board is the actual state of the board
@@ -61,7 +59,6 @@ public class Bishop {
 
     /**
      * Decides whether the Bishop moves to the up-left direction, that it's step over another piece or not.
-     *
      * @param from is the position from where we want to move
      * @param to   is the position where we want to move
      * @param board is the actual state of the board
@@ -82,7 +79,6 @@ public class Bishop {
 
     /**
      * Decides whether the Bishop moves to the up-right direction, that it's step over another piece or not.
-     *
      * @param from is the position from where we want to move
      * @param to   is the position where we want to move
      * @param board is the actual state of the board
@@ -103,7 +99,6 @@ public class Bishop {
 
     /**
      * Decides whether the Bishop moves to the down-left direction, that it's step over another piece or not.
-     *
      * @param from is the position from where we want to move
      * @param to   is the position where we want to move
      * @param board is the actual state of the board
@@ -124,7 +119,6 @@ public class Bishop {
 
     /**
      * Decides whether the Bishop moves to the down-right direction, that it's step over another piece or not.
-     *
      * @param from is the position from where we want to move
      * @param to   is the position where we want to move
      * @param board is the actual state of the board
@@ -144,9 +138,7 @@ public class Bishop {
     }
 
     /**
-     *
      * Decides whether the Bishop of the opposite color will hit the chosen Bishop which enters that position.
-     *
      * @param from is the position from where we want to move
      * @param to   is the position where we want to move
      * @param board is the actual state of the board
@@ -168,7 +160,6 @@ public class Bishop {
 
     /**
      * Decides whether the move is diagonal and the piece cannot be knocked down by the enemy.
-     *
      * @param from        is the position from where we want to move
      * @param to          is the position where we want to move
      * @param actualBoard is the actual state of the board
@@ -189,11 +180,11 @@ public class Bishop {
 
     /**
      * Represents a list with the valid moves.
-     *
      * @param from is the position from where we want to move
      * @param actualBoard is the actual state of the board
      * @return a list which contains positions
      */
+
     public List<Position> listOfValidMoves(Position from, Board actualBoard) {
         List<Position> positions = new ArrayList<>();
         for (int row = 0; row < 5; row++) {
@@ -209,5 +200,9 @@ public class Bishop {
 
     public Color getColor() {
         return color;
+    }
+
+    public Position getPosition() {
+        return position;
     }
 }

@@ -15,12 +15,16 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.StackPane;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import repository.GameState;
+import repository.GameStateRepository;
+
+import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
 public class boardGameController {
     private static final Logger logger = LogManager.getLogger();
-
 
     private enum SelectionPhase {
         SELECT_FROM,
@@ -39,13 +43,32 @@ public class boardGameController {
     private List<Position> selectablePositions = new ArrayList<>();
 
     private Position selected;
-    private Bishop.Color color= Bishop.Color.BLACK;
+    private static Bishop.Color color;
 
+    private static String playerName;
+
+    public void setPlayerName(String newPlayerName){
+        playerName=newPlayerName;
+    }
+    public void setColor(Bishop.Color newColor){
+        color=newColor;
+    }
+    public void setBoardBusinessLogic(Board newBoardBusinessLogic){
+        boardBusinessLogic=newBoardBusinessLogic;
+    }
+
+    public void setDefaultValue(){
+        if(color==null){
+            color= Bishop.Color.BLACK;
+            boardBusinessLogic=new Board();
+        }
+    }
     @FXML
     private GridPane board;
 
     @FXML
     private void initialize() {
+        setDefaultValue();
         createBoard();
         createPieces();
         setSelectablePositions();
@@ -74,7 +97,7 @@ public class boardGameController {
         return square;
     }
 
-    private Board boardBusinessLogic=new Board();
+    private static Board boardBusinessLogic;
     private void createPieces() {
         for (int row = 0; row < 5; row++) {
             for(int column=0; column<4; column++) {
@@ -110,29 +133,40 @@ public class boardGameController {
         handleClickOnSquare(position);
     }
     Position fromPosition;
+
     private void handleClickOnSquare(Position position) {
         switch (selectionPhase) {
             case SELECT_FROM -> {
+                boolean possibleFrom=false;
                 for (var selectablePosition:selectablePositions) {
                     if (selectablePosition.equals(position)) {
-                        selectPosition(position);
-                        alterSelectionPhase();
-                        fromPosition=position;
-                        color=boardBusinessLogic.getBishop(position).getColor();
+                        possibleFrom=true;
                     }
                 }
+                if(possibleFrom){
+                    selectPosition(position);
+                    alterSelectionPhase();
+                    fromPosition=position;
+                    color=boardBusinessLogic.getBishop(position).getColor();
+                }
+
             }
             case SELECT_TO -> {
+                boolean possibleTo=false;
                 for (var selectablePosition:selectablePositions) {
                     if (selectablePosition.equals(position)) {
-                        boardBusinessLogic.move(fromPosition, position);
-                        createPieces();
-                        deselectSelectedPosition();
-                        if (isWin(boardBusinessLogic)){
-                            winState();
-                        }
-                        alterSelectionPhase();
+                        possibleTo=true;
                     }
+                }
+                if(possibleTo){
+                    boardBusinessLogic.move(fromPosition, position);
+                    createPieces();
+                    deselectSelectedPosition();
+                    if (isWin(boardBusinessLogic)){
+                        logger.info("Won the game");
+                        winState();
+                    }
+                    alterSelectionPhase();
                 }
             }
         }
@@ -191,6 +225,7 @@ public class boardGameController {
 
     private void showSelectablePositions() {
         if (selectablePositions.size()==0){
+            logger.info("Lose the game, because there is no possible moves");
             gameOver();
         }
         for (var selectablePosition : selectablePositions) {
@@ -257,7 +292,28 @@ public class boardGameController {
 
     @FXML
     private void handleExit(ActionEvent event) {
-        System.out.println("Exiting...");
+        logger.debug("Exiting...");
         Platform.exit();
+    }
+
+    @FXML
+    public void handleSaveGame(ActionEvent actionEvent) {
+        var repository=new GameStateRepository();
+        GameState gameState=new GameState(playerName,color,boardBusinessLogic);
+        repository.add(gameState);
+
+        try {
+            repository.saveToFile(new File("SavedGame.json"));
+            logger.info("Game saved.");
+        }
+        catch (IOException e){
+            logger.warn("Game might not be saved.");
+        }
+    }
+    private FirstController firstController=new FirstController();
+    @FXML
+    public void handleNewGame(ActionEvent event) throws IOException {
+        color=null;
+        firstController.switchScene(event);
     }
 }

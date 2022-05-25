@@ -7,20 +7,10 @@
             <PatternLayout pattern="${LOG_PATTERN}"/>
             <ThresholdFilter level="TRACE" onMatch="ACCEPT" onMismatch="DENY"/>
         </File>
-        <File name="File2" fileName="warnings.log" append="false">
-            <PatternLayout pattern="${LOG_PATTERN}"/>
-            <LevelRangeFilter minLevel="WARN" maxLevel="WARN" onMatch="ACCEPT" onMismatch="DENY"/>
-        </File>
-        <File name="File3" fileName="fail.log" append="false">
-            <PatternLayout pattern="${LOG_PATTERN}"/>
-            <RegexFilter regex="(?i).*FAIL.*" onMatch="ACCEPT" onMismatch="DENY"/>
-        </File>
     </Appenders>
     <Loggers>
         <Root level="all">
             <AppenderRef ref="File1"/>
-            <AppenderRef ref="File2"/>
-            <AppenderRef ref="File3"/>
         </Root>
         <Logger name="GUI.Main" additivity="true">
             <AppenderRef ref="STDOUT"/>

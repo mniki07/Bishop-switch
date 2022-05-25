@@ -16,8 +16,9 @@
          </image>
       </ImageView>
       <Label layoutX="170.0" layoutY="227.0" text="Name" />
-      <TextField layoutX="226.0" layoutY="223.0" />
-      <Button layoutX="244.0" layoutY="309.0" mnemonicParsing="false" onAction="#switchScene" prefHeight="38.0" prefWidth="112.0" text="New game" />
-      <Button layoutX="419.0" layoutY="309.0" mnemonicParsing="false" onAction="#handleExit" prefHeight="38.0" prefWidth="62.0" text="Exit" />
+      <TextField fx:id="playerName" layoutX="226.0" layoutY="223.0"/>
+      <Button layoutX="106.0" layoutY="309.0" mnemonicParsing="false" onAction="#newGame" prefHeight="38.0" prefWidth="112.0" text="New game" />
+      <Button layoutX="451.0" layoutY="309.0" mnemonicParsing="false" onAction="#handleExit" prefHeight="38.0" prefWidth="62.0" text="Exit" />
+      <Button layoutX="282.0" layoutY="309.0" mnemonicParsing="false" text="Load game" onAction="#handleLoadGame"/>
    </children>
 </AnchorPane>
