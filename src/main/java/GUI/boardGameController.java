@@ -13,8 +13,6 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.StackPane;
-//import org.apache.logging.log4j.LogManager;
-//import org.apache.logging.log4j.Logger;
 import org.tinylog.Logger;
 import repository.GameState;
 import repository.GameStateRepository;
@@ -24,9 +22,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class boardGameController {
-    //private static final Logger logger = LogManager.getLogger();
-
+public class BoardGameController {
     private enum SelectionPhase {
         SELECT_FROM,
         SELECT_TO;

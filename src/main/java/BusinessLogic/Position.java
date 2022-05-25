@@ -17,18 +17,34 @@ public class Position {
         this.column=column;
     }
 
+    /**
+     * Returns the row of the position.
+     * @return the row
+     */
     public int getRow() {
         return row;
     }
 
+    /**
+     * Returns the column of the position.
+     * @return the column
+     */
     public int getColumn() {
         return column;
     }
 
+    /**
+     * Sets the row of the position.
+     * @return the row
+     */
     public void setRow(int row) {
         this.row = row;
     }
 
+    /**
+     * Sets the column of the position.
+     * @return the column
+     */
     public void setColumn(int column) {
         this.column = column;
     }

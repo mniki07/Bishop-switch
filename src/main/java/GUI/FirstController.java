@@ -13,20 +13,16 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-//import org.apache.logging.log4j.LogManager;
-//import org.apache.logging.log4j.Logger;
 import org.tinylog.Logger;
 import repository.GameStateRepository;
 
 public class FirstController {
-    //private static final Logger logger = LogManager.getLogger();
-
     @FXML
     private TextField playerName;
 
     @FXML
     private void newGame(ActionEvent event) throws IOException{
-        boardGameController boardGameController=new boardGameController();
+        BoardGameController boardGameController=new BoardGameController();
         String name=playerName.getText();
         boardGameController.setPlayerName(name);
         switchScene(event);
@@ -37,7 +33,7 @@ public class FirstController {
         Logger.info("Switching to the Board.");
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setResizable(false);
-        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/ui.fxml")));
+        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/Board.fxml")));
         stage.setScene(new Scene(root));
         stage.show();
     }
@@ -50,7 +46,7 @@ public class FirstController {
     @FXML
     public void handleLoadGame(ActionEvent actionEvent) throws IOException {
         var repository=new GameStateRepository();
-        boardGameController boardGameController=new boardGameController();
+        BoardGameController boardGameController=new BoardGameController();
         try {
             repository.loadFromFile(new File("SavedGame.json"));
             var gameState=repository.findAll();

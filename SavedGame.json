@@ -1,0 +1,88 @@
+[
+  {
+    "playerName": "Niki",
+    "color": "WHITE",
+    "board": {
+      "board": [
+        [
+          {
+            "position": {
+              "row": 0,
+              "column": 0
+            },
+            "color": "BLACK"
+          },
+          null,
+          {
+            "position": {
+              "row": 0,
+              "column": 2
+            },
+            "color": "BLACK"
+          },
+          {
+            "position": {
+              "row": 0,
+              "column": 3
+            },
+            "color": "BLACK"
+          }
+        ],
+        [
+          null,
+          null,
+          {
+            "position": {
+              "row": 1,
+              "column": 2
+            },
+            "color": "BLACK"
+          },
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          {
+            "position": {
+              "row": 3,
+              "column": 1
+            },
+            "color": "WHITE"
+          },
+          {
+            "position": {
+              "row": 3,
+              "column": 2
+            },
+            "color": "WHITE"
+          },
+          null
+        ],
+        [
+          null,
+          null,
+          {
+            "position": {
+              "row": 4,
+              "column": 2
+            },
+            "color": "WHITE"
+          },
+          {
+            "position": {
+              "row": 4,
+              "column": 3
+            },
+            "color": "WHITE"
+          }
+        ]
+      ]
+    }
+  }
+]

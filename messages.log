@@ -1,10 +1,69 @@
-Application launch
-Show the homepage
-Switching to the Board.
-Made the board
-Click on square 4, 0
-Click on square 2, 1
-Click on square 3, 1
-Click on square 0, 2
-Click on square 1, 1
-Exiting...
+16:50:51.083 [main] INFO  GUI.Main - Application launch
+16:50:52.555 [JavaFX Application Thread] INFO  GUI.sceneSwitchingApplication - Show the homepage
+16:50:55.657 [JavaFX Application Thread] DEBUG BusinessLogic.Board - Made the board
+16:50:55.659 [JavaFX Application Thread] INFO  GUI.FirstController - Switching to the Board.
+16:50:57.668 [JavaFX Application Thread] INFO  GUI.FirstController - Switching to the Board.
+16:50:57.702 [JavaFX Application Thread] DEBUG BusinessLogic.Board - Made the board
+16:50:58.635 [JavaFX Application Thread] DEBUG GUI.BoardGameController - Exiting...
+2022-05-25 17:56:01 [main] GUI.Main.main()
+INFO: Application launch
+2022-05-25 17:56:02 [JavaFX Application Thread] GUI.sceneSwitchingApplication.start()
+INFO: Show the homepage
+2022-05-25 17:56:10 [JavaFX Application Thread] GUI.FirstController.switchScene()
+INFO: Switching to the Board.
+2022-05-25 17:56:10 [JavaFX Application Thread] BusinessLogic.Board.<init>()
+DEBUG: Made the board
+2022-05-25 17:57:04 [JavaFX Application Thread] GUI.BoardGameController.handleMouseClick()
+DEBUG: Click on square 4, 0
+2022-05-25 17:57:04 [JavaFX Application Thread] GUI.BoardGameController.handleMouseClick()
+DEBUG: Click on square 3, 1
+2022-05-25 17:57:05 [JavaFX Application Thread] GUI.BoardGameController.handleMouseClick()
+DEBUG: Click on square 4, 1
+2022-05-25 17:57:06 [JavaFX Application Thread] GUI.BoardGameController.handleMouseClick()
+DEBUG: Click on square 0, 1
+2022-05-25 17:57:07 [JavaFX Application Thread] GUI.BoardGameController.handleMouseClick()
+DEBUG: Click on square 1, 2
+2022-05-25 17:57:08 [JavaFX Application Thread] GUI.BoardGameController.handleMouseClick()
+DEBUG: Click on square 4, 1
+2022-05-25 17:57:09 [JavaFX Application Thread] GUI.BoardGameController.handleMouseClick()
+DEBUG: Click on square 3, 2
+2022-05-25 17:57:12 [JavaFX Application Thread] GUI.BoardGameController.handleSaveGame()
+INFO: Game saved.
+2022-05-25 17:57:14 [JavaFX Application Thread] GUI.FirstController.switchScene()
+INFO: Switching to the Board.
+2022-05-25 17:57:14 [JavaFX Application Thread] BusinessLogic.Board.<init>()
+DEBUG: Made the board
+2022-05-25 17:57:15 [JavaFX Application Thread] GUI.BoardGameController.handleMouseClick()
+DEBUG: Click on square 4, 1
+2022-05-25 17:57:16 [JavaFX Application Thread] GUI.BoardGameController.handleMouseClick()
+DEBUG: Click on square 3, 2
+2022-05-25 17:57:18 [JavaFX Application Thread] GUI.BoardGameController.handleExit()
+DEBUG: Exiting...
+2022-05-25 17:57:23 [main] GUI.Main.main()
+INFO: Application launch
+2022-05-25 17:57:25 [JavaFX Application Thread] GUI.sceneSwitchingApplication.start()
+INFO: Show the homepage
+2022-05-25 17:57:28 [JavaFX Application Thread] BusinessLogic.Board.<init>()
+DEBUG: Made the board
+2022-05-25 17:57:28 [JavaFX Application Thread] GUI.FirstController.switchScene()
+INFO: Switching to the Board.
+2022-05-25 17:57:36 [JavaFX Application Thread] GUI.BoardGameController.handleExit()
+DEBUG: Exiting...
+2022-05-25 18:25:57 [main] GUI.Main.main()
+INFO: Application launch
+2022-05-25 18:25:59 [JavaFX Application Thread] GUI.sceneSwitchingApplication.start()
+INFO: Show the homepage
+2022-05-25 18:26:08 [JavaFX Application Thread] GUI.FirstController.switchScene()
+INFO: Switching to the Board.
+2022-05-25 18:26:08 [JavaFX Application Thread] BusinessLogic.Board.<init>()
+DEBUG: Made the board
+2022-05-25 18:26:09 [JavaFX Application Thread] GUI.BoardGameController.handleMouseClick()
+DEBUG: Click on square 4, 0
+2022-05-25 18:26:10 [JavaFX Application Thread] GUI.BoardGameController.handleMouseClick()
+DEBUG: Click on square 3, 1
+2022-05-25 18:26:14 [JavaFX Application Thread] GUI.BoardGameController.handleMouseClick()
+DEBUG: Click on square 0, 3
+2022-05-25 18:26:15 [JavaFX Application Thread] GUI.BoardGameController.handleMouseClick()
+DEBUG: Click on square 1, 2
+2022-05-25 18:26:18 [JavaFX Application Thread] GUI.BoardGameController.handleExit()
+DEBUG: Exiting...

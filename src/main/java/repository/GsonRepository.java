@@ -21,6 +21,11 @@ public class GsonRepository<T> extends Repository<T> {
         super(elementType);
     }
 
+    /**
+     * It loads data from a file.
+     * @param file is the file from which the data is loaded
+     * @throws IOException
+     */
     public void loadFromFile(File file) throws IOException {
         try (var reader = new FileReader(file)) {
             var listType = TypeToken.getParameterized(List.class, elementType).getType();
@@ -28,6 +33,11 @@ public class GsonRepository<T> extends Repository<T> {
         }
     }
 
+    /**
+     * It saves the data to a file
+     * @param file is the file where the data is loaded
+     * @throws IOException
+     */
     public void saveToFile(File file) throws IOException {
         try (var writer = new FileWriter(file)) {
             GSON.toJson(elements, writer);

@@ -184,7 +184,6 @@ public class Bishop {
      * @param actualBoard is the actual state of the board
      * @return a list which contains positions
      */
-
     public List<Position> listOfValidMoves(Position from, Board actualBoard) {
         List<Position> positions = new ArrayList<>();
         for (int row = 0; row < 5; row++) {
@@ -198,10 +197,18 @@ public class Bishop {
         return positions;
     }
 
+    /**
+     * Returns the color of the Bishop.
+     * @return a color
+     */
     public Color getColor() {
         return color;
     }
 
+    /**
+     * Returns the position of the Bishop.
+     * @return a position
+     */
     public Position getPosition() {
         return position;
     }
