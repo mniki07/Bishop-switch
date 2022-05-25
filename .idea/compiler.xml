@@ -7,6 +7,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="homework-project-mniki07" />
+        <module name="Bishop-switch" />
       </profile>
     </annotationProcessing>
   </component>

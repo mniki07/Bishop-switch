@@ -1,7 +1,4 @@
 <Configuration status="debug">
-    <Properties>
-        <Property name="LOG_PATTERN">%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %m%n</Property>
-    </Properties>
     <Appenders>
         <File name="File1" fileName="messages.log" append="false">
             <PatternLayout pattern="${LOG_PATTERN}"/>
@@ -12,8 +9,5 @@
         <Root level="all">
             <AppenderRef ref="File1"/>
         </Root>
-        <Logger name="GUI.Main" additivity="true">
-            <AppenderRef ref="STDOUT"/>
-        </Logger>
     </Loggers>
 </Configuration>
