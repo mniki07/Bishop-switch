@@ -1,13 +1,14 @@
 package BusinessLogic;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+//import org.apache.logging.log4j.LogManager;
+//import org.apache.logging.log4j.Logger;
+import org.tinylog.Logger;
 
 /**
  * Represents a 2D board with 5*4 size
  */
 public class Board {
-    private static final Logger logger = LogManager.getLogger();
+    //private static final Logger logger = LogManager.getLogger();
     private Bishop[][] board=new Bishop[5][4];
 
     /**
@@ -22,7 +23,7 @@ public class Board {
             board[4][i]=new Bishop(Bishop.Color.WHITE,
                     new Position(4,i));
         }
-        logger.debug("Made the board");
+        Logger.debug("Made the board");
     }
 
     /**

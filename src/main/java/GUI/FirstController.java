@@ -13,12 +13,13 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+//import org.apache.logging.log4j.LogManager;
+//import org.apache.logging.log4j.Logger;
+import org.tinylog.Logger;
 import repository.GameStateRepository;
 
 public class FirstController {
-    private static final Logger logger = LogManager.getLogger();
+    //private static final Logger logger = LogManager.getLogger();
 
     @FXML
     private TextField playerName;
@@ -33,7 +34,7 @@ public class FirstController {
 
     @FXML
     public void switchScene(ActionEvent event) throws IOException {
-        logger.info("Switching to the Board.");
+        Logger.info("Switching to the Board.");
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setResizable(false);
         Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/ui.fxml")));
@@ -42,7 +43,7 @@ public class FirstController {
     }
     @FXML
     private void handleExit(ActionEvent event) {
-        logger.info("Exiting...");
+        Logger.info("Exiting...");
         Platform.exit();
     }
 

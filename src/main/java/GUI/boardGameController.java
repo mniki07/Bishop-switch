@@ -13,8 +13,9 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.StackPane;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+//import org.apache.logging.log4j.LogManager;
+//import org.apache.logging.log4j.Logger;
+import org.tinylog.Logger;
 import repository.GameState;
 import repository.GameStateRepository;
 
@@ -24,7 +25,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class boardGameController {
-    private static final Logger logger = LogManager.getLogger();
+    //private static final Logger logger = LogManager.getLogger();
 
     private enum SelectionPhase {
         SELECT_FROM,
@@ -129,7 +130,7 @@ public class boardGameController {
         var row = GridPane.getRowIndex(square);
         var col = GridPane.getColumnIndex(square);
         var position = new Position(row, col);
-        logger.debug("Click on square {}", position);
+        Logger.debug("Click on square {}", position);
         handleClickOnSquare(position);
     }
     Position fromPosition;
@@ -163,7 +164,7 @@ public class boardGameController {
                     createPieces();
                     deselectSelectedPosition();
                     if (isWin(boardBusinessLogic)){
-                        logger.info("Won the game");
+                        Logger.info("Won the game");
                         winState();
                     }
                     alterSelectionPhase();
@@ -225,7 +226,7 @@ public class boardGameController {
 
     private void showSelectablePositions() {
         if (selectablePositions.size()==0){
-            logger.info("Lose the game, because there is no possible moves");
+            Logger.info("Lose the game, because there is no possible moves");
             gameOver();
         }
         for (var selectablePosition : selectablePositions) {
@@ -292,7 +293,7 @@ public class boardGameController {
 
     @FXML
     private void handleExit(ActionEvent event) {
-        logger.debug("Exiting...");
+        Logger.debug("Exiting...");
         Platform.exit();
     }
 
@@ -304,10 +305,10 @@ public class boardGameController {
 
         try {
             repository.saveToFile(new File("SavedGame.json"));
-            logger.info("Game saved.");
+            Logger.info("Game saved.");
         }
         catch (IOException e){
-            logger.warn("Game might not be saved.");
+            Logger.warn("Game might not be saved.");
         }
     }
     private FirstController firstController=new FirstController();
